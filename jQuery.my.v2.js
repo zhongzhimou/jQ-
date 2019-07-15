@@ -68,6 +68,12 @@ Init.prototype.css = function (property, value) {
   
    
 
+
+
+
+
+
+
 let box = $('.box');
 // console.log(box);
 box.css('width','200');
