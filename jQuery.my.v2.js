@@ -66,7 +66,7 @@ Init.prototype.css = function (property, value) {
 })();
  
   
-
+   
 
 let box = $('.box');
 // console.log(box);
