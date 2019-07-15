@@ -35,14 +35,42 @@ jq中如何获取元素
     //给伪数组加一个长度属性
     this.length = nodeList.length;
   }
-
+/* 
+jq的CSS方法,有两个功能
+设置css样式
+  jq对象.css(属性名,属性值)
+获取css样式
+  jq对象.css(属性名)
+*/
+//构造函数.原型.方法名
+Init.prototype.css = function (property, value) {
+  // 实现设置
+  //把伪数组中的每一个都遍历,设置他的css样式属性
+  //元素对象.style.css属性名 = 新的值;
+  //元素是this,this是实例对像,也是伪数组,遍历
+  for (let i = 0; i < this.length; i++){
+    // console.log(this[i]);
+    //判断是否有带单位
+    //console.log('abcdef'.indexOf('d'));  如果有的输出3
+    //console.log('abcdef'.indexOf('g'));如果没有,输出都是-1
+    if(value.indexOf('px') === -1){
+     this[i].style[property] = value + 'px';
+    }else {
+      this[i].style[property] = value;
+    }
+    
+}
+   
   }
-
   window.$ = window.jQuery = $;
 })();
+ 
+  
+
+
 let box = $('.box');
 // console.log(box);
-
+box.css('width','200');
 
 
 
